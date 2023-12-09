@@ -4,11 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/partials/header/header.component';
+import { HomeComponent } from './components/partials/Home/home/home.component';
+import { ServicesComponent } from './components/partials/Home/services/services.component';
+import { AboutComponent } from './components/partials/Home/about/about.component';
+import { ContactComponent } from './components/partials/Home/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    ServicesComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -18,3 +26,5 @@ import { HeaderComponent } from './components/partials/header/header.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

@@ -27,3 +27,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
+
+
+Project 1
+Showcase of foods and foodcompany of an xoxo brand
+a. 1st user signups and checks whatever food he/she want to eat and app suggests some top chefs and shows their rating and availblity.
+b. Later then he/she comes to your ordered place and cooks what ever user wants
+c. according to chef time that he spent in user place that he need to pay 
+
+
