@@ -9,6 +9,8 @@ import { ServicesComponent } from './components/partials/Home/services/services.
 import { AboutComponent } from './components/partials/Home/about/about.component';
 import { ContactComponent } from './components/partials/Home/contact/contact.component';
 import { NotFoundComponent } from './components/Common/not-found/not-found.component';
+import { LoginComponent } from './components/Home-Initial/login/login.component';
+import { SignUpComponent } from './components/Home-Initial/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NotFoundComponent } from './components/Common/not-found/not-found.compo
     ServicesComponent,
     AboutComponent,
     ContactComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
