@@ -6,32 +6,53 @@ import { AboutComponent } from './components/partials/Home/about/about.component
 import { ServicesComponent } from './components/partials/Home/services/services.component';
 import { ContactComponent } from './components/partials/Home/contact/contact.component';
 import { NotFoundComponent } from './components/Common/not-found/not-found.component';
+import { LoginComponent } from './components/Home-Initial/login/login.component';
+import { SignUpComponent } from './components/Home-Initial/sign-up/sign-up.component';
+import { DashboardComponent } from './components/Home-Initial/dashboard/dashboard.component';
+import { AuthGuard } from './components/Guards/auth.guard';
 
 const routes: Routes = [
   {
-    path:'header', 
-    component:HeaderComponent
+    path:'login',
+    component:LoginComponent
+  }, {
+    path:'signup',
+    component:SignUpComponent
   },
-  { path: 'home',
-    component: HomeComponent 
+  {
+    path:'',
+    component:DashboardComponent,
+    children:[
+      {
+        path:'header',
+        component:HeaderComponent,
+        canActivate:[AuthGuard],
+      }
+    ]
   },
-  { path: 'about', 
-    component: AboutComponent 
+  {
+    path: '', redirectTo: 'login', pathMatch: 'full'
   },
-  { path: 'services', 
-    component: ServicesComponent 
+  {
+    path: 'home',
+    component: HomeComponent
   },
-  { path: 'contact', 
-  component: ContactComponent 
-}
-,
-{
-  path: '', redirectTo: '/header', pathMatch:'full'
-},
-{
-  path:'**',
-  component: NotFoundComponent
-},
+  {
+    path: 'about',
+    component: AboutComponent
+  },
+  {
+    path: 'services',
+    component: ServicesComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
+  }, 
+  {
+    path: '**',
+    component: NotFoundComponent
+  },
 
 
 ];
