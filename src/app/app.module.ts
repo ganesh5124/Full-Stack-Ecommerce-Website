@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { ContactComponent } from './components/partials/Home/contact/contact.com
 import { NotFoundComponent } from './components/Common/not-found/not-found.component';
 import { LoginComponent } from './components/Home-Initial/login/login.component';
 import { SignUpComponent } from './components/Home-Initial/sign-up/sign-up.component';
+import { DashboardComponent } from './components/Home-Initial/dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,15 @@ import { SignUpComponent } from './components/Home-Initial/sign-up/sign-up.compo
     ContactComponent,
     NotFoundComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
