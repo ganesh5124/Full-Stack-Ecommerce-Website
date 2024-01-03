@@ -39,7 +39,6 @@ export class LoginComponent {
         console.log(err);
       })
     }
-    
     console.log(this.loginForm.value);
     
   }
