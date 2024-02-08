@@ -23,8 +23,9 @@ export class LoginComponent {
   ){}
 
   ngOnInit(){
-    if(this.auth.isLoggedIn()){
-      this.route.navigate(['header'])
+    console.log(this.auth.isLoggedIn());
+    if(!this.auth.isLoggedIn()){
+      this.route.navigate(['/header'])
     }
     
   }
@@ -34,7 +35,7 @@ export class LoginComponent {
     if(this.loginForm.valid){
       this.auth.login(this.loginForm.value).subscribe((response:login)=>{
         console.log(response);
-        this.route.navigate(['header'])
+        this.route.navigate(['/header'])
       },(err:Error)=>{
         console.log(err);
       })

@@ -11,7 +11,7 @@ import { SignUpComponent } from './components/Home-Initial/sign-up/sign-up.compo
 import { AuthGuard } from './components/Guards/auth.guard';
 
 const routes: Routes = [
-  {
+{
     path: '', redirectTo: 'login', pathMatch: 'full'
   },
   {
@@ -29,7 +29,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate:[AuthGuard],
   },
   {
     path: 'about',
@@ -43,6 +44,9 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent
   }, 
+  {
+    path: '', component:LoginComponent
+  },
   {
     path: '**',
     component: NotFoundComponent

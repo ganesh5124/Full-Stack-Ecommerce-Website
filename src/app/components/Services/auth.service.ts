@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, of, throwError } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class AuthService {
 
   logout(){
     localStorage.removeItem('token');
-    this.route.navigate(['login'])
+    this.route.navigate(['/login'])
   }
 
   login({username, password}:any):Observable<any>{
