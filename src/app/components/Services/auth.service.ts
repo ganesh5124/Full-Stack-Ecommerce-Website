@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor( private route : Router) {  }
+  constructor( private route : Router,
+    private jwtHelpService: JwtHelperService) {  }
 
   setToken(token:string){
     localStorage.setItem('token',token);
@@ -34,6 +36,13 @@ export class AuthService {
 
      throw new Error("Failed to login")
     
+  }
+
+  isAuthenticated(){
+    const token = localStorage.getItem('token')
+    console.log(this.jwtHelpService.isTokenExpired(token), 'isTokenexpired');
+    // return true
+     return !this.jwtHelpService.isTokenExpired(token)
   }
 
   

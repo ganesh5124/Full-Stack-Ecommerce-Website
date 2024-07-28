@@ -16,6 +16,8 @@ import { DashboardComponent } from './components/Home-Initial/dashboard/dashboar
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './components/Guards/auth.guard';
 import { AuthService } from './components/Services/auth.service';
+import { HighlightDirective } from './highlight.directive';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -28,16 +30,20 @@ import { AuthService } from './components/Services/auth.service';
     NotFoundComponent,
     LoginComponent,
     SignUpComponent,
-    DashboardComponent
+    DashboardComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {}
+    })
   ],
-  providers: [AuthGuard, AuthService],
+  providers: [JwtHelperService,AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
